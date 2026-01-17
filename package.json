@@ -1,0 +1,83 @@
+{
+  "name": "srcpack",
+  "version": "0.1.4",
+  "description": "Zero-config CLI for bundling code into LLM-optimized context files",
+  "keywords": [
+    "llm",
+    "ai",
+    "context",
+    "chatgpt",
+    "claude",
+    "gemini",
+    "grok",
+    "copilot",
+    "code-bundler",
+    "concatenate",
+    "codebase",
+    "source-code",
+    "monorepo",
+    "prompt",
+    "context-window",
+    "rag",
+    "embedding",
+    "ai-tools",
+    "ai-coding",
+    "agentic",
+    "glob",
+    "cli",
+    "bun"
+  ],
+  "author": "Konstantin Tarkus <koistya@kriasoft.com>",
+  "license": "MIT",
+  "homepage": "https://kriasoft.com/srcpack/",
+  "repository": "github:kriasoft/srcpack",
+  "type": "module",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "bin": {
+    "srcpack": "./dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "src",
+    "schema.json"
+  ],
+  "scripts": {
+    "build": "bun build ./src/cli.ts ./src/index.ts --outdir ./dist --target bun && tsc",
+    "typecheck": "tsc -p tsconfig.check.json",
+    "check": "tsc -p tsconfig.check.json",
+    "test": "bun test tests/unit/ tests/e2e/",
+    "test:unit": "bun test tests/unit/",
+    "test:e2e": "bun test tests/e2e/",
+    "test:login": "bun test --env-file .env.local tests/manual/login.test.ts",
+    "test:upload": "bun test --env-file .env.local tests/manual/upload.test.ts",
+    "test:all": "bun test --env-file .env.local tests/",
+    "test:watch": "bun test tests/unit/ tests/e2e/ --watch",
+    "docs:dev": "vitepress dev",
+    "docs:build": "vitepress build",
+    "docs:preview": "vitepress preview",
+    "docs:deploy": "gh-pages -d .vitepress/dist"
+  },
+  "dependencies": {
+    "@clack/prompts": "^0.11.0",
+    "@googleapis/drive": "^20.0.0",
+    "cosmiconfig": "^9.0.0",
+    "google-auth-library": "^10.5.0",
+    "ignore": "^7.0.5",
+    "oauth-callback": "^1.2.5",
+    "ora": "^9.0.0",
+    "zod": "^4.3.5"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.3.6",
+    "gh-pages": "^6.3.0",
+    "prettier": "^3.8.0",
+    "typescript": "^5.9.3",
+    "vitepress": "^2.0.0-alpha.15"
+  }
+}
